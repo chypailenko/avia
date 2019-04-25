@@ -1,0 +1,37 @@
+<app-header></app-header>
+
+<div class="container">
+  <div class="tickets">
+    <div class="tickets__info">
+        <input type="text" aria-label="First name" class="form-control" placeholder="Перевозчик">
+        <input type="text" aria-label="Last name" class="form-control" placeholder="Цена">
+    </div>
+
+
+    <div class="tickets__info">
+        <input type="text" aria-label="First name" class="form-control" placeholder="Откуда">
+        <input type="text" aria-label="Last name" class="form-control" placeholder="Куда">
+    </div>
+
+
+    <div class="tickets__info">
+      <div class="tickets__date1">
+        <ngb-datepicker #dp (select)="onDateSelection($event)" [displayMonths]="2" [dayTemplate]="to" outsideDays="hidden"></ngb-datepicker>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--
+<ngb-datepicker #dp1 (select)="onDateSelection($event)" [displayMonths]="2" [dayTemplate]="to" outsideDays="hidden"></ngb-datepicker>
+-->
+<ng-template #to let-date let-focused="focused">
+  <span class="custom-day"
+        [class.focused]="focused"
+        [class.range]="isRange(date)"
+        [class.faded]="isHovered(date) || isInside(date)"
+        (mouseenter)="hoveredDate = date"
+        (mouseleave)="hoveredDate = null">
+    {{ date.day }}
+  </span>
+</ng-template>
