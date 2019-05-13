@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {NgbDate, NgbCalendar} from '@ng-bootstrap/ng-bootstrap';
+import {TicketsService} from '../../services/tickets.service';
 
 @Component({
   selector: 'app-tickets',
@@ -7,14 +8,14 @@ import {NgbDate, NgbCalendar} from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./tickets.component.scss']
 })
 export class TicketsComponent implements OnInit {
-
-
+  ticketsArr = [];
   hoveredDate: NgbDate;
 
   fromDate: NgbDate;
   toDate: NgbDate;
 
-  constructor(calendar: NgbCalendar) {
+  constructor(calendar: NgbCalendar,
+              public ticketsService: TicketsService) {
     this.fromDate = calendar.getToday();
     this.toDate = calendar.getNext(calendar.getToday(), 'd', 10);
   }
@@ -43,6 +44,10 @@ export class TicketsComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.ticketsService.getTickets().subscribe( (res) => {
+      console.log(res);
+      this.ticketsArr = res;
+    });
   }
 
 }

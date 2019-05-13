@@ -10,6 +10,7 @@ import { TicketsComponent } from './containers/tickets/tickets.component';
 import { HeaderComponent } from './components/header/header.component';
 import { AddTicketComponent } from './containers/add-ticket/add-ticket.component';
 import { SearchComponent } from './containers/search/search.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { SearchComponent } from './containers/search/search.component';
     BrowserAnimationsModule,
     NgbModule,
     NgbPaginationModule,
-    NgbAlertModule
+    NgbAlertModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

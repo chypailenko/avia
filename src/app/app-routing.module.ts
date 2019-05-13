@@ -5,8 +5,8 @@ import {AddTicketComponent} from './containers/add-ticket/add-ticket.component';
 import {SearchComponent} from './containers/search/search.component';
 
 const routes: Routes = [
-  // { path: '', component: TicketsComponent},
-  { path: 'tickets', component: TicketsComponent },
+  { path: '', component: TicketsComponent},
+  // { path: 'tickets', component: TicketsComponent },
   { path: 'tickets/add', component: AddTicketComponent },
   { path: 'search', component: SearchComponent }
 ];

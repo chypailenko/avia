@@ -1,5 +1,6 @@
 <app-header></app-header>
 
+<!--
 <div class="container">
   <div class="tickets">
     <div class="tickets__info">
@@ -15,16 +16,23 @@
 
 
     <div class="tickets__info">
-      <div class="tickets__date1">
+
+     &lt;!&ndash; <div class="tickets__date1">
         <ngb-datepicker #dp (select)="onDateSelection($event)" [displayMonths]="2" [dayTemplate]="to" outsideDays="hidden"></ngb-datepicker>
+      </div>&ndash;&gt;
+
+      <div class="tickets__date">
+        <div class="tickets__btn">Дата вылета</div>
+        <div class="tickets__btn">Дата прилета</div>
       </div>
+
     </div>
   </div>
+
 </div>
 
-<!--
-<ngb-datepicker #dp1 (select)="onDateSelection($event)" [displayMonths]="2" [dayTemplate]="to" outsideDays="hidden"></ngb-datepicker>
--->
+
+
 <ng-template #to let-date let-focused="focused">
   <span class="custom-day"
         [class.focused]="focused"
@@ -35,3 +43,31 @@
     {{ date.day }}
   </span>
 </ng-template>
+-->
+
+
+<div class="container">
+  <div class="tickets" *ngFor="let ticket of ticketsArr">
+    <div class="tickets__info">
+      <div class="form-control tickets__info--m10">{{ticket.carrier}}</div>
+      <div class="form-control">{{ticket.price}}</div>
+    </div>
+
+
+    <div class="tickets__info">
+      <div class="form-control tickets__info--m10">{{ticket.originName}}</div>
+      <div class="form-control">{{ticket.destinationName}}</div>
+    </div>
+
+
+    <div class="tickets__info">
+
+      <div class="tickets__date">
+        <div class="tickets__btn tickets__info--m10">{{ticket.departureDate}}</div>
+        <div class="tickets__btn">{{ticket.arrivalDate}}</div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
