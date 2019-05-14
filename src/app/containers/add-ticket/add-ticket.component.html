@@ -1,5 +1,121 @@
 <app-header></app-header>
 
-<p>
-  add-ticket works!
-</p>
+
+<form class="form" #addTicketForm="ngForm" (ngSubmit)="sendForm()">
+  <div class="container">
+
+    <div class="form-group form__row">
+      <label class="form__label" for="origin">Откуда (сокращенно): </label>
+      <input type="text"
+             class="form-control form__input"
+             id="origin"
+             placeholder="Сокращение от названия города откуда вылетаем"
+             name="origin"
+             [(ngModel)]="ticket.origin" >
+    </div>
+
+    <div class="form-group form__row">
+      <label class="form__label" for="originName">Откуда:</label>
+      <input type="text"
+             class="form-control form__input"
+             id="originName"
+             placeholder="Полное название города откуда вылетаем"
+             name="originName"
+             [(ngModel)]="ticket.originName">
+    </div>
+
+
+    <div class="form-group form__row">
+      <label class="form__label" for="destination">Куда (сокращенно):</label>
+      <input type="text"
+             class="form-control form__input"
+             id="destination"
+             placeholder="Сокращение от названия города куда летим"
+             name="destination"
+             [(ngModel)]="ticket.destination">
+    </div>
+
+    <div class="form-group form__row">
+      <label class="form__label" for="destinationName">Куда:</label>
+      <input type="text"
+             class="form-control form__input"
+             id="destinationName"
+             placeholder="полное название города куда летим"
+             name="destinationName"
+             [(ngModel)]="ticket.destinationName">
+    </div>
+
+
+    <div class="form-group form__row">
+      <label class="form__label" for="departureDate">Дата отправления:</label>
+      <input type="text"
+             class="form-control form__input"
+             id="departureDate"
+             placeholder="00:00"
+             name="departureDate"
+             [(ngModel)]="ticket.departureDate">
+    </div>
+
+    <div class="form-group form__row">
+      <label class="form__label" for="departureTime">Время отправления:</label>
+      <input type="text"
+             class="form-control form__input"
+             id="departureTime"
+             placeholder="00:00"
+             name="departureTime"
+             [(ngModel)]="ticket.departureTime">
+    </div>
+
+    <div class="form-group form__row">
+      <label class="form__label" for="arrivalDate">Дата прилета:</label>
+      <input type="text"
+             class="form-control form__input"
+             id="arrivalDate"
+             placeholder="12.05.18"
+             name="arrivalDate"
+             [(ngModel)]="ticket.arrivalDate">
+    </div>
+
+    <div class="form-group form__row">
+      <label class="form__label" for="arrivalTime">Время прилета:</label>
+      <input type="text"
+             class="form-control form__input"
+             id="arrivalTime"
+             placeholder="00:00"
+             name="arrivalTime"
+             [(ngModel)]="ticket.arrivalTime">
+    </div>
+
+    <div class="form-group form__row">
+      <label class="form__label" for="carrier">Перевозчик:</label>
+      <input type="text"
+             class="form-control form__input"
+             id="carrier"
+             placeholder="S7"
+             name="carrier"
+             [(ngModel)]="ticket.carrier">
+    </div>
+
+    <div class="form-group form__row">
+      <label class="form__label" for="stops">Количество остановок:</label>
+      <input type="text"
+             class="form-control form__input"
+             id="stops"
+             placeholder="0"
+             name="stops"
+             [(ngModel)]="ticket.stops">
+    </div>
+
+    <div class="form-group form__row">
+      <label class="form__label" for="price">Цена:</label>
+      <input type="text"
+             class="form-control form__input"
+             id="price"
+             placeholder="17400"
+             name="price"
+             [(ngModel)]="ticket.price">
+    </div>
+
+    <button type="submit" class="btn form__btn">Submit</button>
+  </div>
+</form>

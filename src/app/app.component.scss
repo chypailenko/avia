@@ -12,5 +12,15 @@ a {
     text-decoration: none;
     outline: none;
   }
+  &:-webkit-any-link {
+    text-decoration: none;
+  }
 }
 
+
+a:hover {
+  text-decoration: none!important;
+  a.tickets {
+    text-decoration: none;
+  }
+}
