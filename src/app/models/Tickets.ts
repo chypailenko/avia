@@ -6,7 +6,8 @@ export class Tickets {
     public originName?: string,
     public destinationName?: string,
     public departureDate?: string,
-    public arrivalDate?: string
+    public arrivalDate?: string,
+    public id?: number
   ) {
 
   }

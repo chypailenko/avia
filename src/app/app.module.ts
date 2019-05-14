@@ -11,6 +11,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { AddTicketComponent } from './containers/add-ticket/add-ticket.component';
 import { SearchComponent } from './containers/search/search.component';
 import {HttpClientModule} from '@angular/common/http';
+import { EditTicketComponent } from './containers/edit-ticket/edit-ticket.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import {HttpClientModule} from '@angular/common/http';
     HeaderComponent,
     AddTicketComponent,
     SearchComponent,
+    EditTicketComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,73 +1,56 @@
 <app-header></app-header>
 
-<!--
+
+
 <div class="container">
-  <div class="tickets">
+
+
+  <div class="tickets tickets__header">
     <div class="tickets__info">
-        <input type="text" aria-label="First name" class="form-control" placeholder="Перевозчик">
-        <input type="text" aria-label="Last name" class="form-control" placeholder="Цена">
+      <div class="form-control tickets__info--m10">Перевозчик</div>
+      <div class="form-control">Цена</div>
     </div>
 
 
     <div class="tickets__info">
-        <input type="text" aria-label="First name" class="form-control" placeholder="Откуда">
-        <input type="text" aria-label="Last name" class="form-control" placeholder="Куда">
+      <div class="form-control tickets__info--m10">Откуда</div>
+      <div class="form-control">Куда</div>
     </div>
 
 
     <div class="tickets__info">
-
-     &lt;!&ndash; <div class="tickets__date1">
-        <ngb-datepicker #dp (select)="onDateSelection($event)" [displayMonths]="2" [dayTemplate]="to" outsideDays="hidden"></ngb-datepicker>
-      </div>&ndash;&gt;
 
       <div class="tickets__date">
-        <div class="tickets__btn">Дата вылета</div>
+        <div class="tickets__btn tickets__info--m10">Дата вылета</div>
         <div class="tickets__btn">Дата прилета</div>
       </div>
 
     </div>
   </div>
 
-</div>
 
+    <div  *ngFor="let ticket of ticketsArr">
+      <a routerLink="edit/{{ ticket.id }}" class="tickets">
+        <div class="tickets__info">
+          <div class="form-control tickets__info--m10">{{ticket.carrier}}</div>
+          <div class="form-control">{{ticket.price}}</div>
+        </div>
 
+        <div class="tickets__info">
+          <div class="form-control tickets__info--m10">{{ticket.originName}}</div>
+          <div class="form-control">{{ticket.destinationName}}</div>
+        </div>
 
-<ng-template #to let-date let-focused="focused">
-  <span class="custom-day"
-        [class.focused]="focused"
-        [class.range]="isRange(date)"
-        [class.faded]="isHovered(date) || isInside(date)"
-        (mouseenter)="hoveredDate = date"
-        (mouseleave)="hoveredDate = null">
-    {{ date.day }}
-  </span>
-</ng-template>
--->
+        <div class="tickets__info">
 
+          <div class="tickets__date">
+            <div class="tickets__btn tickets__info--m10">{{ticket.departureDate}}</div>
+            <div class="tickets__btn">{{ticket.arrivalDate}}</div>
+          </div>
 
-<div class="container">
-  <div class="tickets" *ngFor="let ticket of ticketsArr">
-    <div class="tickets__info">
-      <div class="form-control tickets__info--m10">{{ticket.carrier}}</div>
-      <div class="form-control">{{ticket.price}}</div>
-    </div>
-
-
-    <div class="tickets__info">
-      <div class="form-control tickets__info--m10">{{ticket.originName}}</div>
-      <div class="form-control">{{ticket.destinationName}}</div>
-    </div>
-
-
-    <div class="tickets__info">
-
-      <div class="tickets__date">
-        <div class="tickets__btn tickets__info--m10">{{ticket.departureDate}}</div>
-        <div class="tickets__btn">{{ticket.arrivalDate}}</div>
-      </div>
+        </div>
+      </a>
 
     </div>
-  </div>
 
 </div>

@@ -10,6 +10,13 @@
   &:hover {
     background: rgb(227, 242, 253);
   }
+  &__header {
+    background: #bccbd8a1;
+    &:hover {
+      background: #bccbd8a1;
+    }
+  }
+
   &__info {
     display: flex;
     flex-direction: column;
