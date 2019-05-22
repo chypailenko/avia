@@ -1,3 +1,5 @@
+@import "../../../assets/global";
+
 .form {
   margin-top: 40px;
   &__row {
@@ -8,10 +10,5 @@
   }
   &__input {
     max-width: 500px;
-  }
-  &__btn {
-    background-color: #e3f2fd;
-    color: #17a2b8;
-    border-color: #17a2b8;
   }
 }

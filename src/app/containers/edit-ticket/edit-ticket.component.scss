@@ -1,0 +1,19 @@
+@import "../../../assets/global";
+
+.form {
+  margin-top: 40px;
+  &__row {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  &__input {
+    max-width: 500px;
+  }
+  &__btn-container {
+    display: flex;
+    flex-direction: row;
+  }
+
+}

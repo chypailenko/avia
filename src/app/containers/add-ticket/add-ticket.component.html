@@ -3,7 +3,7 @@
 
 <form class="form" #addTicketForm="ngForm" (ngSubmit)="sendForm()">
   <div class="container">
-
+    <h1>Add Ticket:</h1>
     <div class="form-group form__row">
       <label class="form__label" for="origin">Откуда (сокращенно): </label>
       <input type="text"
@@ -51,7 +51,7 @@
       <input type="text"
              class="form-control form__input"
              id="departureDate"
-             placeholder="00:00"
+             placeholder="02.02.2025"
              name="departureDate"
              [(ngModel)]="ticket.departureDate">
     </div>
@@ -116,6 +116,6 @@
              [(ngModel)]="ticket.price">
     </div>
 
-    <button type="submit" class="btn form__btn">Submit</button>
+    <button type="submit" class="btn custom-btn--prime">Submit</button>
   </div>
 </form>

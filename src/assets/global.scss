@@ -1,0 +1,13 @@
+.custom-btn {
+  &--prime {
+    background-color: #e3f2fd;
+    color: #17a2b8;
+    border-color: #17a2b8;
+    margin-right: 25px;
+  }
+  &--danger {
+    background-color: #f443363b;
+    color: #b80509;
+    border-color: #b80509;
+  }
+}

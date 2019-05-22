@@ -7,6 +7,20 @@ import {ActivatedRoute} from '@angular/router';
   styleUrls: ['./edit-ticket.component.scss']
 })
 export class EditTicketComponent implements OnInit {
+  ticket = {
+    origin: '',
+    originName: '',
+    destination: '',
+    destinationName: '',
+    departureDate: '',
+    departureTime: '',
+    arrivalDate: '',
+    arrivalTime: '',
+    carrier: '',
+    stops: '',
+    price: '',
+    id: ''
+  };
 
   constructor(private activatedRoute: ActivatedRoute) { }
 
@@ -14,6 +28,10 @@ export class EditTicketComponent implements OnInit {
     this.activatedRoute.params.subscribe( (params) => {
       console.log(params);
     });
+  }
+
+  sendForm() {
+    console.log(this.ticket);
   }
 
 }
